@@ -57,7 +57,7 @@
     <span>100% GENUINE APPLE DEVICES | FLAT ₹499 BOOKING CHARGE | CASH ON DELIVERY</span>
   </div>
 
-  <!-- Top Navigation Header -->
+  <!-- Top Navigation Header (Settings Option Removed) -->
   <header class="sticky top-0 z-40 glass-header">
     <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-2">
@@ -73,10 +73,10 @@
         </div>
       </div>
       
-      <button onclick="toggleConfigModal()" class="text-xs text-slate-300 hover:text-white bg-slate-800/80 px-3 py-1.5 rounded-full transition border border-slate-700 flex items-center gap-1.5">
-        <i class="fa-solid fa-gear text-blue-400"></i>
-        <span>Settings</span>
-      </button>
+      <div class="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span class="text-[10px] font-bold text-emerald-400 uppercase">Live Stock</span>
+      </div>
     </div>
   </header>
 
@@ -93,7 +93,6 @@
       </h1>
       <p class="text-slate-400 text-xs mb-3">Book your device now at just <strong>₹499 Booking Charge</strong> & Cash on Delivery!</p>
       
-      <!-- Trust Points -->
       <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/10 text-[10px]">
         <div class="text-center">
           <p class="font-bold text-emerald-400 text-xs">4.9 ★</p>
@@ -133,7 +132,7 @@
         <i class="fa-brands fa-telegram text-blue-400 text-xl"></i>
         <div>
           <p class="text-[10px] text-slate-400 uppercase tracking-wider">Official Telegram Support</p>
-          <p class="font-bold text-white text-xs" id="currentTelegramDisplay">@YourTelegramHandle</p>
+          <p class="font-bold text-white text-xs">@aditya_kumar_60</p>
         </div>
       </div>
       <span class="verify-badge text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
@@ -148,11 +147,9 @@
     </div>
 
     <!-- iPhone List Container -->
-    <div id="phoneGrid" class="space-y-4">
-      <!-- Cards rendered dynamically via JS -->
-    </div>
+    <div id="phoneGrid" class="space-y-4"></div>
 
-    <!-- Expanded Authentic Reviews Section -->
+    <!-- Reviews Section -->
     <div class="mt-8 pt-6 border-t border-slate-800">
       <h2 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
         <i class="fa-solid fa-comments text-blue-400"></i> Customer Delivery Reviews (Recent)
@@ -171,13 +168,6 @@
             <span class="text-yellow-400 text-[10px]">★★★★★</span>
           </div>
           <p class="text-slate-300 text-[11px]">"100% trusted hai guys! Pehle 499 pay karke order confirm kiya fir courier waale ne ghar pe box open karke check karwaya."</p>
-        </div>
-        <div class="apple-trust-card p-3 rounded-xl text-xs">
-          <div class="flex justify-between items-center mb-1">
-            <span class="font-bold text-white">Vikas Patel (Ahmedabad) <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i></span>
-            <span class="text-yellow-400 text-[10px]">★★★★★</span>
-          </div>
-          <p class="text-slate-300 text-[11px]">"iPhone 16 Pro Max Natural Titanium mila mujhe ₹27,999 me! Super smooth process Telegram par."</p>
         </div>
       </div>
     </div>
@@ -209,14 +199,15 @@
       </div>
 
       <!-- Selected Item Summary Box -->
-      <div class="bg-black/40 p-3 rounded-xl mb-4 border border-white/5 text-xs space-y-1.5">
-        <div class="flex justify-between font-bold text-white">
+      <div class="bg-blue-950/40 p-3 rounded-xl mb-4 border border-blue-500/30 text-xs space-y-1">
+        <p class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">SELECTED IPHONE:</p>
+        <div class="flex justify-between font-black text-white text-sm">
           <span id="modalSelectedPhone">iPhone Model</span>
           <span id="modalFinalPrice" class="text-blue-400">₹0</span>
         </div>
-        <div class="text-[10px] text-slate-400 flex justify-between">
+        <div class="text-[11px] text-slate-300 flex justify-between">
           <span id="modalSelectedSpecs">Storage & Color</span>
-          <span class="text-emerald-400 font-semibold">Advance: ₹499 Only</span>
+          <span class="text-emerald-400 font-bold">Advance: ₹499 Only</span>
         </div>
       </div>
 
@@ -255,7 +246,7 @@
         </div>
 
         <!-- Price Breakdown -->
-        <div class="bg-blue-950/30 border border-blue-500/20 p-2.5 rounded-xl text-[11px] space-y-1">
+        <div class="bg-black/40 border border-white/10 p-2.5 rounded-xl text-[11px] space-y-1">
           <div class="flex justify-between text-slate-300">
             <span>Advance Booking Fee:</span>
             <span class="font-bold text-yellow-400">₹499</span>
@@ -264,9 +255,6 @@
             <span>Cash on Delivery:</span>
             <span id="modalRemainingPrice" class="text-emerald-400">₹0</span>
           </div>
-          <p class="text-[9px] text-slate-400 italic pt-1 border-t border-white/5">
-            *Cash on Delivery amount to be paid after checking the box on delivery.
-          </p>
         </div>
 
         <!-- Submit Button -->
@@ -278,21 +266,9 @@
     </div>
   </div>
 
-  <!-- Telegram Config Modal -->
-  <div id="configModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-    <div class="apple-trust-card bg-slate-900 rounded-2xl p-6 max-w-sm w-full border-slate-700">
-      <h3 class="text-base font-bold text-white mb-1">Set Telegram Username</h3>
-      <p class="text-xs text-slate-400 mb-4">Apna Telegram handle bina `@` ke enter karein:</p>
-      <input type="text" id="telegramHandleInput" placeholder="e.g. your_telegram_username" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white mb-4 focus:outline-none focus:border-blue-500" />
-      <div class="flex gap-2">
-        <button onclick="saveTelegramHandle()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs transition">Save Handle</button>
-        <button onclick="toggleConfigModal()" class="bg-slate-800 text-slate-300 px-4 py-2.5 rounded-xl text-xs">Cancel</button>
-      </div>
-    </div>
-  </div>
-
   <script>
-    let telegramUsername = "YourTelegramHandle";
+    // PERMANENT TELEGRAM HANDLE SET HERE
+    const telegramUsername = "aditya_kumar_60";
 
     const phones = [
       { id: '12', name: 'iPhone 12', basePrice: 12999, originalPrice: '₹65,900', colors: ['Black', 'White', 'Blue', 'Green', 'Purple'], img: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80' },
@@ -406,7 +382,7 @@
       };
 
       document.getElementById('modalSelectedPhone').innerText = phoneName;
-      document.getElementById('modalSelectedSpecs').innerText = `${selection.storageLabel} | ${selection.color}`;
+      document.getElementById('modalSelectedSpecs').innerText = `${selection.storageLabel} | Colour: ${selection.color}`;
       
       const formattedPrice = '₹' + finalPrice.toLocaleString('en-IN');
       const codPrice = '₹' + (finalPrice - 499).toLocaleString('en-IN');
@@ -470,20 +446,6 @@
       const query = document.getElementById('searchInput').value.toLowerCase();
       const filtered = phones.filter(p => p.name.toLowerCase().includes(query));
       renderCards(filtered);
-    }
-
-    function toggleConfigModal() {
-      document.getElementById('configModal').classList.toggle('hidden');
-    }
-
-    function saveTelegramHandle() {
-      const handle = document.getElementById('telegramHandleInput').value.trim().replace('@', '');
-      if (handle) {
-        telegramUsername = handle;
-        document.getElementById('currentTelegramDisplay').innerText = '@' + handle;
-        filterPhones();
-        toggleConfigModal();
-      }
     }
 
     let totalSeconds = 10000;
