@@ -92,6 +92,51 @@
     </div>
   </header>
 
+  <!-- ENTRY POPUP MODAL (80% DISCOUNT & ₹499 ADVANCE) -->
+  <div id="entryOfferModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="luxury-card bg-white rounded-3xl p-6 max-w-sm w-full border-slate-200 text-center relative overflow-hidden shadow-2xl animate-bounce-short">
+      
+      <button onclick="closeEntryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-base">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center mx-auto mb-3 border border-indigo-100 text-indigo-600 text-2xl shadow-sm">
+        <i class="fa-solid fa-tags"></i>
+      </div>
+
+      <span class="bg-rose-100 border border-rose-200 text-rose-700 text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2">
+        FLAT 80% OFF CLEARANCE
+      </span>
+
+      <h2 class="text-xl font-black text-slate-900 mb-1 leading-tight">
+        Customs Stock Sale 2026
+      </h2>
+      
+      <p class="text-xs text-slate-600 mb-4 leading-relaxed">
+        Get genuine sealed iPhones at up to <strong>80% discount</strong>. Book now with just <strong class="text-indigo-600">₹499 Advance Charge</strong> & pay the rest on <strong>CASH ON DELIVERY</strong>!
+      </p>
+
+      <div class="bg-slate-50 border border-slate-200 p-3 rounded-2xl mb-4 text-left text-xs space-y-1.5">
+        <div class="flex items-center justify-between text-slate-700">
+          <span><i class="fa-solid fa-shield-halved text-emerald-600 mr-1.5"></i> Sealed Box Warranty:</span>
+          <span class="font-bold text-slate-900">1 Year</span>
+        </div>
+        <div class="flex items-center justify-between text-slate-700">
+          <span><i class="fa-solid fa-truck-fast text-blue-600 mr-1.5"></i> Advance Booking:</span>
+          <span class="font-black text-amber-600">₹499 Only</span>
+        </div>
+        <div class="flex items-center justify-between text-slate-700">
+          <span><i class="fa-solid fa-box-open text-indigo-600 mr-1.5"></i> Open Box Checking:</span>
+          <span class="font-bold text-emerald-600">Available</span>
+        </div>
+      </div>
+
+      <button onclick="closeEntryModal()" class="premium-gradient-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3.5 px-4 rounded-xl">
+        EXPLORE OFFER & PHONES <i class="fa-solid fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+
   <!-- Main Container -->
   <main class="max-w-md mx-auto px-4 pt-5">
 
@@ -108,7 +153,6 @@
       </h1>
       <p class="text-indigo-200 text-xs mb-4">Book original sealed iPhones with just <strong>₹499 Advance</strong> & rest on CASH ON DELIVERY.</p>
       
-      <!-- Trust Stats Inside Banner -->
       <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/15 text-[10px]">
         <div class="text-center">
           <p class="font-black text-amber-300 text-sm">4.9 ★</p>
@@ -135,7 +179,7 @@
         <span class="text-xs font-bold text-rose-700">Flash Sale Ends In:</span>
       </div>
       <div class="flex gap-1 text-rose-600 font-black text-xs tracking-wider bg-white px-3 py-1.5 rounded-xl border border-rose-200 shadow-sm">
-        <span id="days">24</span>D : <span id="hours">20</span>H: <span id="minutes">18</span>M
+        <span id="hours">02</span>h : <span id="minutes">45</span>m : <span id="seconds">18</span>s
       </div>
     </div>
 
@@ -461,6 +505,10 @@
           selectedImageIndex: 0
         };
       });
+    }
+
+    function closeEntryModal() {
+      document.getElementById('entryOfferModal').classList.add('hidden');
     }
 
     function renderCards(data) {
