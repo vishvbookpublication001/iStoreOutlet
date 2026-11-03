@@ -11,81 +11,83 @@
     
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: #090a0f;
-      color: #f5f5f7;
+      background: #f1f5f9;
+      color: #0f172a;
     }
 
-    .glass-header {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-b: 1px solid rgba(255, 255, 255, 0.1);
+    .apple-glass-header {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
     }
 
-    .apple-trust-card {
-      background: linear-gradient(180deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-      transition: all 0.3s ease;
+    .luxury-card {
+      background: #ffffff;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .apple-trust-card:hover {
-      border-color: rgba(59, 130, 246, 0.4);
+    .luxury-card:hover {
+      border-color: #6366f1;
+      box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.12);
       transform: translateY(-2px);
     }
 
-    .glow-telegram-btn {
-      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    .premium-gradient-btn {
+      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+      box-shadow: 0 4px 20px rgba(79, 70, 229, 0.35);
+      transition: all 0.3s ease;
     }
 
-    .glow-telegram-btn:hover {
-      background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.6);
+    .premium-gradient-btn:hover {
+      background: linear-gradient(135deg, #4338ca 0%, #2563eb 100%);
+      box-shadow: 0 6px 25px rgba(79, 70, 229, 0.5);
     }
 
-    .verify-badge {
-      background: linear-gradient(90deg, #059669 0%, #10b981 100%);
+    .hero-banner-gradient {
+      background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e3a8a 100%);
+      box-shadow: 0 15px 35px -10px rgba(49, 46, 129, 0.25);
     }
 
     .thumb-img {
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1.5px solid #e2e8f0;
       cursor: pointer;
       transition: all 0.2s ease;
     }
     .thumb-img.active {
-      border-color: #3b82f6;
-      box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+      border-color: #4f46e5;
+      box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body class="min-h-screen pb-20">
 
-  <!-- Security Announcement Bar -->
-  <div class="bg-gradient-to-r from-emerald-600 via-blue-600 to-indigo-600 text-white text-[11px] py-2 px-4 text-center font-bold tracking-wide flex items-center justify-center gap-2">
-    <i class="fa-solid fa-shield-check text-yellow-300 text-xs"></i>
-    <span>100% GENUINE APPLE DEVICES | FLAT ₹499 BOOKING CHARGE | CASH ON DELIVERY</span>
+  <!-- Top Announcement Bar -->
+  <div class="bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 text-white text-[11px] py-2 px-4 text-center font-bold tracking-wide shadow-sm flex items-center justify-center gap-2">
+    <i class="fa-solid fa-bolt text-amber-300"></i>
+    <span>WAREHOUSE CLEARANCE SALE • FLAT ₹499 BOOKING • CASH ON DELIVERY</span>
   </div>
 
-  <!-- Top Navigation Header -->
-  <header class="sticky top-0 z-40 glass-header">
-    <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-2">
-        <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
-          <i class="fa-brands fa-apple text-lg text-white"></i>
+  <!-- Minimal Top Navigation Header -->
+  <header class="sticky top-0 z-40 apple-glass-header py-3 px-4">
+    <div class="max-w-md mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2.5">
+        <div class="w-9 h-9 rounded-2xl bg-slate-900 flex items-center justify-center shadow-md">
+          <i class="fa-brands fa-apple text-xl text-white"></i>
         </div>
         <div>
-          <div class="flex items-center gap-1">
-            <span class="font-extrabold text-sm tracking-tight text-white">iStore Outlet</span>
-            <i class="fa-solid fa-circle-check text-blue-400 text-xs"></i>
-          </div>
-          <p class="text-[9px] text-slate-400">Direct Warehouse Clearance</p>
+          <span class="font-extrabold text-sm tracking-tight text-slate-900 block leading-none">iStore India</span>
+          <span class="text-[10px] text-emerald-600 font-bold flex items-center gap-1 mt-0.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Verified Outlet
+          </span>
         </div>
       </div>
       
-      <div class="flex items-center gap-1 bg-emerald-500/10 border border-emerald-500/20 px-2.5 py-1 rounded-full">
-        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span class="text-[10px] font-bold text-emerald-400 uppercase">Live Stock</span>
+      <div class="flex items-center gap-1.5 bg-indigo-50 border border-indigo-100 px-3 py-1.5 rounded-full text-xs text-indigo-700 font-bold shadow-sm">
+        <i class="fa-brands fa-telegram text-indigo-600 text-sm"></i> @aditya_kumar_60
       </div>
     </div>
   </header>
@@ -93,206 +95,188 @@
   <!-- Main Container -->
   <main class="max-w-md mx-auto px-4 pt-5">
 
-    <!-- Trust Hero Banner -->
-    <div class="apple-trust-card rounded-2xl p-4 mb-5 text-center relative overflow-hidden border-blue-500/20">
-      <div class="absolute top-0 right-0 bg-blue-500/10 text-blue-400 text-[9px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider border-l border-b border-blue-500/20">
-        Verified Seller
-      </div>
-      <h1 class="text-2xl font-black text-white mt-1 mb-1">
-        Official Stock Clearance <span class="text-blue-400">2026</span>
-      </h1>
-      <p class="text-slate-400 text-xs mb-3">Book your device now at just <strong>₹499 Booking Charge</strong> & Cash on Delivery!</p>
+    <!-- Luxury Hero Banner -->
+    <div class="hero-banner-gradient rounded-3xl p-5 mb-5 text-center text-white relative overflow-hidden">
+      <div class="absolute -right-10 -top-10 w-32 h-32 bg-white/10 rounded-full blur-2xl"></div>
+      <div class="absolute -left-10 -bottom-10 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl"></div>
       
-      <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/10 text-[10px]">
+      <span class="bg-white/15 border border-white/20 text-indigo-200 text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-wider inline-block mb-2">
+        Official Event 2026
+      </span>
+      <h1 class="text-2xl font-black tracking-tight mb-1 text-white">
+        Apple Clearance Hub
+      </h1>
+      <p class="text-indigo-200 text-xs mb-4">Book original sealed iPhones with just <strong>₹499 Advance</strong> & rest on CASH ON DELIVERY.</p>
+      
+      <!-- Trust Stats Inside Banner -->
+      <div class="grid grid-cols-3 gap-2 pt-3 border-t border-white/15 text-[10px]">
         <div class="text-center">
-          <p class="font-bold text-emerald-400 text-xs">4.9 ★</p>
-          <p class="text-slate-400">Customer Rating</p>
+          <p class="font-black text-amber-300 text-sm">4.9 ★</p>
+          <p class="text-indigo-200">Rating</p>
         </div>
-        <div class="text-center border-x border-white/10">
-          <p class="font-bold text-blue-400 text-xs">10,000+</p>
-          <p class="text-slate-400">Units Delivered</p>
+        <div class="border-x border-white/15 text-center">
+          <p class="font-black text-emerald-300 text-sm">10k+</p>
+          <p class="text-indigo-200">Delivered</p>
         </div>
         <div class="text-center">
-          <p class="font-bold text-yellow-400 text-xs">₹499</p>
-          <p class="text-slate-400">Advance Booking</p>
+          <p class="font-black text-cyan-300 text-sm">1 Year</p>
+          <p class="text-indigo-200">Warranty</p>
         </div>
       </div>
     </div>
 
-    <!-- Live Timer Alert -->
-    <div class="bg-red-950/40 border border-red-500/30 rounded-2xl p-3.5 mb-5 flex items-center justify-between">
+    <!-- Compact Countdown Bar -->
+    <div class="luxury-card rounded-2xl p-3.5 mb-5 flex items-center justify-between border-rose-100 bg-gradient-to-r from-rose-50/80 to-white">
       <div class="flex items-center gap-2">
         <span class="relative flex h-3 w-3">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
         </span>
-        <div>
-          <p class="text-xs font-bold text-red-200">Stock Offer Ending Soon!</p>
-          <p class="text-[10px] text-red-400">Only 3 units left per model</p>
-        </div>
+        <span class="text-xs font-bold text-rose-700">Flash Sale Ends In:</span>
       </div>
-      <div class="flex gap-1 text-red-400 font-black text-sm tracking-widest bg-black/50 px-2.5 py-1 rounded-lg border border-red-500/20">
-        <span id="hours">02</span>:<span id="minutes">45</span>:<span id="seconds">18</span>
+      <div class="flex gap-1 text-rose-600 font-black text-xs tracking-wider bg-white px-3 py-1.5 rounded-xl border border-rose-200 shadow-sm">
+        <span id="days">24</span>D : <span id="hours">20</span>H: <span id="minutes">18</span>M
       </div>
-    </div>
-
-    <!-- Connected Dealer Badge -->
-    <div class="apple-trust-card rounded-xl p-3 mb-5 flex items-center justify-between text-xs">
-      <div class="flex items-center gap-2.5">
-        <i class="fa-brands fa-telegram text-blue-400 text-xl"></i>
-        <div>
-          <p class="text-[10px] text-slate-400 uppercase tracking-wider">Official Telegram Support</p>
-          <p class="font-bold text-white text-xs">@aditya_kumar_60</p>
-        </div>
-      </div>
-      <span class="verify-badge text-white text-[10px] font-bold px-2.5 py-1 rounded-full flex items-center gap-1">
-        <i class="fa-solid fa-check text-[8px]"></i> Active
-      </span>
     </div>
 
     <!-- Search Box -->
     <div class="relative mb-5">
       <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400 text-xs"></i>
-      <input type="text" id="searchInput" oninput="filterPhones()" placeholder="Search iPhone 12, 13, 14, 15, 16, 17..." class="w-full bg-slate-900/90 border border-slate-700/80 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition shadow-inner" />
+      <input type="text" id="searchInput" oninput="filterPhones()" placeholder="Search iPhone 12 to 17 Pro Max..." class="w-full bg-white border border-slate-200 rounded-2xl pl-10 pr-4 py-3 text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-600 transition shadow-sm" />
     </div>
 
     <!-- iPhone List Container -->
     <div id="phoneGrid" class="space-y-4"></div>
 
-    <!-- Reviews Section -->
-    <div class="mt-8 pt-6 border-t border-slate-800">
-      <h2 class="text-sm font-bold text-white mb-3 flex items-center gap-2">
-        <i class="fa-solid fa-comments text-blue-400"></i> Customer Delivery Reviews (Recent)
+    <!-- Customer Reviews -->
+    <div class="mt-8 pt-6 border-t border-slate-200">
+      <h2 class="text-sm font-bold text-slate-900 mb-3 flex items-center gap-2">
+        <i class="fa-solid fa-comments text-indigo-600"></i> Customer Delivery Reviews
       </h2>
       <div class="space-y-3">
-        <div class="apple-trust-card p-3 rounded-xl text-xs">
+        <div class="luxury-card p-3.5 rounded-2xl text-xs">
           <div class="flex justify-between items-center mb-1">
-            <span class="font-bold text-white">Rahul Sharma (Delhi) <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i></span>
-            <span class="text-yellow-400 text-[10px]">★★★★★</span>
+            <span class="font-bold text-slate-900">Rahul Sharma (Delhi) <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i></span>
+            <span class="text-amber-500 text-[10px]">★★★★★</span>
           </div>
-          <p class="text-slate-300 text-[11px]">"Bhai maine ₹499 booking charge diya tha, baki Cash on Delivery diya. iPhone 15 Pro Max exact 2 din me aa gaya. Thanks bhai!"</p>
+          <p class="text-slate-600 text-[11px]">"Bhai maine ₹499 booking charge diya tha, baki CASH ON DELIVERY diya. iPhone 15 Pro Max exact 2 din me aa gaya. Thanks bhai!"</p>
         </div>
-        <div class="apple-trust-card p-3 rounded-xl text-xs">
+        <div class="luxury-card p-3.5 rounded-2xl text-xs">
           <div class="flex justify-between items-center mb-1">
-            <span class="font-bold text-white">Aman Verma (Mumbai) <i class="fa-solid fa-circle-check text-emerald-400 text-[10px]"></i></span>
-            <span class="text-yellow-400 text-[10px]">★★★★★</span>
+            <span class="font-bold text-slate-900">Aman Verma (Mumbai) <i class="fa-solid fa-circle-check text-emerald-600 text-[10px]"></i></span>
+            <span class="text-amber-500 text-[10px]">★★★★★</span>
           </div>
-          <p class="text-slate-300 text-[11px]">"100% trusted hai guys! Pehle 499 pay karke order confirm kiya fir courier waale ne ghar pe box open karke check karwaya."</p>
+          <p class="text-slate-600 text-[11px]">"100% trusted hai guys! Pehle 499 pay karke order confirm kiya fir courier waale ne ghar pe box open karke check karwaya."</p>
         </div>
       </div>
     </div>
 
     <!-- Footer Trust Info -->
-    <footer class="mt-8 pt-6 border-t border-slate-800 text-center space-y-2">
-      <div class="flex justify-center gap-4 text-xs text-slate-400">
-        <span><i class="fa-solid fa-truck-fast text-blue-400 mr-1"></i> Fast Shipping</span>
-        <span><i class="fa-solid fa-box text-blue-400 mr-1"></i> Open Box Check</span>
+    <footer class="mt-8 pt-6 border-t border-slate-200 text-center space-y-2">
+      <div class="flex justify-center gap-4 text-xs text-slate-600">
+        <span><i class="fa-solid fa-truck-fast text-indigo-600 mr-1"></i> Fast Shipping</span>
+        <span><i class="fa-solid fa-box text-indigo-600 mr-1"></i> Open Box Check</span>
       </div>
-      <p class="text-[10px] text-slate-500">© 2026 iStore India. All rights reserved.</p>
+      <p class="text-[10px] text-slate-400">© 2026 iStore India. All rights reserved.</p>
     </footer>
 
   </main>
 
   <!-- IMAGE LIGHTBOX / CAROUSEL ZOOM MODAL -->
-  <div id="imageLightboxModal" class="hidden fixed inset-0 bg-black/95 backdrop-blur-lg z-50 flex items-center justify-center p-4">
+  <div id="imageLightboxModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <div class="relative max-w-lg w-full flex flex-col items-center">
-      <!-- Close Button -->
-      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-white bg-white/10 hover:bg-white/20 w-10 h-10 rounded-full flex items-center justify-center text-lg z-10 transition">
+      <button onclick="closeLightbox()" class="absolute -top-12 right-0 text-slate-800 bg-white hover:bg-slate-100 w-10 h-10 rounded-full flex items-center justify-center text-lg z-10 transition shadow-xl">
         <i class="fa-solid fa-xmark"></i>
       </button>
 
-      <!-- Carousel Image Container -->
-      <div class="w-full h-80 sm:h-96 flex items-center justify-center bg-black/50 rounded-2xl p-4 border border-white/10 relative overflow-hidden mb-4">
+      <div class="w-full h-80 sm:h-96 flex items-center justify-center bg-white rounded-3xl p-4 border border-slate-200 relative overflow-hidden mb-4 shadow-2xl">
         <img id="lightboxImg" src="" alt="Zoomed Phone" class="max-h-full max-w-full object-contain transition-all duration-300" />
         
-        <!-- Prev Button -->
-        <button onclick="prevLightboxImage()" class="absolute left-2 bg-black/60 hover:bg-black text-white w-9 h-9 rounded-full flex items-center justify-center border border-white/20 transition">
+        <button onclick="prevLightboxImage()" class="absolute left-3 bg-white/90 hover:bg-white text-slate-900 w-10 h-10 rounded-full flex items-center justify-center border border-slate-200 shadow-md transition">
           <i class="fa-solid fa-chevron-left"></i>
         </button>
-        <!-- Next Button -->
-        <button onclick="nextLightboxImage()" class="absolute right-2 bg-black/60 hover:bg-black text-white w-9 h-9 rounded-full flex items-center justify-center border border-white/20 transition">
+        <button onclick="nextLightboxImage()" class="absolute right-3 bg-white/90 hover:bg-white text-slate-900 w-10 h-10 rounded-full flex items-center justify-center border border-slate-200 shadow-md transition">
           <i class="fa-solid fa-chevron-right"></i>
         </button>
       </div>
 
-      <!-- Carousel Indicators / Counter -->
       <div class="flex items-center gap-2">
-        <span id="lightboxCounter" class="text-xs font-bold text-slate-300">1 / 3</span>
+        <span id="lightboxCounter" class="text-xs font-bold text-white bg-slate-900 px-3.5 py-1.5 rounded-full shadow">1 / 3</span>
       </div>
     </div>
   </div>
 
   <!-- NEXT PAGE: CUSTOMER DETAILS & CHECKOUT MODAL -->
-  <div id="nextPageModal" class="hidden fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
-    <div class="apple-trust-card bg-slate-900 rounded-2xl p-5 max-w-sm w-full border-slate-700 text-left my-auto">
+  <div id="nextPageModal" class="hidden fixed inset-0 bg-slate-950/70 backdrop-blur-md z-50 flex items-center justify-center p-4 overflow-y-auto">
+    <div class="luxury-card bg-white rounded-3xl p-5 max-w-sm w-full border-slate-200 text-left my-auto shadow-2xl">
       
-      <div class="flex justify-between items-center pb-3 border-b border-slate-800 mb-3">
+      <div class="flex justify-between items-center pb-3 border-b border-slate-100 mb-3">
         <div class="flex items-center gap-2">
-          <i class="fa-solid fa-truck-ramp-box text-blue-400 text-lg"></i>
-          <h3 class="text-sm font-bold text-white">Delivery Address & Booking</h3>
+          <i class="fa-solid fa-truck-ramp-box text-indigo-600 text-lg"></i>
+          <h3 class="text-sm font-bold text-slate-900">Delivery Address & Booking</h3>
         </div>
-        <button onclick="closeNextPageModal()" class="text-slate-400 hover:text-white text-sm">
+        <button onclick="closeNextPageModal()" class="text-slate-400 hover:text-slate-700 text-sm">
           <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
 
-      <div class="bg-blue-950/40 p-3 rounded-xl mb-4 border border-blue-500/30 text-xs space-y-1">
-        <p class="text-[10px] text-blue-400 font-bold uppercase tracking-wider">SELECTED IPHONE:</p>
-        <div class="flex justify-between font-black text-white text-sm">
+      <div class="bg-indigo-50/80 p-3.5 rounded-2xl mb-4 border border-indigo-100 text-xs space-y-1">
+        <p class="text-[10px] text-indigo-600 font-extrabold uppercase tracking-wider">SELECTED IPHONE:</p>
+        <div class="flex justify-between font-black text-slate-900 text-sm">
           <span id="modalSelectedPhone">iPhone Model</span>
-          <span id="modalFinalPrice" class="text-blue-400">₹0</span>
+          <span id="modalFinalPrice" class="text-indigo-600">₹0</span>
         </div>
-        <div class="text-[11px] text-slate-300 flex justify-between">
+        <div class="text-[11px] text-slate-600 flex justify-between">
           <span id="modalSelectedSpecs">Storage & Color</span>
-          <span class="text-emerald-400 font-bold">Advance: ₹499 Only</span>
+          <span class="text-emerald-700 font-bold">Advance: ₹499 Only</span>
         </div>
       </div>
 
       <form id="checkoutForm" onsubmit="submitToTelegram(event)" class="space-y-3">
         <div>
-          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Full Name *</label>
-          <input type="text" id="custName" required placeholder="Enter your name" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Full Name *</label>
+          <input type="text" id="custName" required placeholder="Enter your name" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 transition" />
         </div>
 
         <div>
-          <label class="block text-[11px] font-semibold text-slate-300 mb-1">Mobile Number (WhatsApp/Telegram) *</label>
-          <input type="tel" id="custPhone" required placeholder="10-digit mobile number" pattern="[0-9]{10}" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+          <label class="block text-[11px] font-semibold text-slate-700 mb-1">Mobile Number (WhatsApp/Telegram) *</label>
+          <input type="tel" id="custPhone" required placeholder="10-digit mobile number" pattern="[0-9]{10}" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 transition" />
         </div>
 
         <div class="grid grid-cols-2 gap-2">
           <div>
-            <label class="block text-[11px] font-semibold text-slate-300 mb-1">State *</label>
-            <input type="text" id="custState" required placeholder="e.g. Delhi, UP" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">State *</label>
+            <input type="text" id="custState" required placeholder="e.g. Delhi, UP" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 transition" />
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-slate-300 mb-1">City *</label>
-            <input type="text" id="custCity" required placeholder="Your City" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">City *</label>
+            <input type="text" id="custCity" required placeholder="Your City" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 transition" />
           </div>
         </div>
 
         <div class="grid grid-cols-3 gap-2">
           <div class="col-span-2">
-            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Full Address / Landmark *</label>
-            <input type="text" id="custAddress" required placeholder="House No, Street, Area" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Full Address / Landmark *</label>
+            <input type="text" id="custAddress" required placeholder="House No, Street, Area" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 transition" />
           </div>
           <div>
-            <label class="block text-[11px] font-semibold text-slate-300 mb-1">Pincode *</label>
-            <input type="text" id="custPincode" required placeholder="6 digits" pattern="[0-9]{6}" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" />
+            <label class="block text-[11px] font-semibold text-slate-700 mb-1">Pincode *</label>
+            <input type="text" id="custPincode" required placeholder="6 digits" pattern="[0-9]{6}" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3.5 py-2.5 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 transition" />
           </div>
         </div>
 
-        <div class="bg-black/40 border border-white/10 p-2.5 rounded-xl text-[11px] space-y-1">
-          <div class="flex justify-between text-slate-300">
+        <div class="bg-slate-50 border border-slate-200 p-3 rounded-2xl text-[11px] space-y-1.5">
+          <div class="flex justify-between text-slate-600">
             <span>Advance Booking Fee:</span>
-            <span class="font-bold text-yellow-400">₹499</span>
+            <span class="font-bold text-amber-600">₹499</span>
           </div>
-          <div class="flex justify-between text-slate-300 font-bold">
-            <span>Cash on Delivery:</span>
-            <span id="modalRemainingPrice" class="text-emerald-400">₹0</span>
+          <div class="flex justify-between text-slate-900 font-extrabold">
+            <span>CASH ON DELIVERY:</span>
+            <span id="modalRemainingPrice" class="text-emerald-600">₹0</span>
           </div>
         </div>
 
-        <button type="submit" class="glow-telegram-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3 px-4 rounded-xl mt-2 transition">
+        <button type="submit" class="premium-gradient-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3.5 px-4 rounded-xl mt-2">
           <i class="fa-brands fa-telegram text-base"></i> CONFIRM & PROCEED TO TELEGRAM (PAY ₹499)
         </button>
       </form>
@@ -465,7 +449,6 @@
     const userSelections = {};
     let activePhoneOrder = null;
 
-    // Lightbox State
     let currentLightboxImages = [];
     let currentLightboxIndex = 0;
 
@@ -491,73 +474,72 @@
         const activeImgSrc = phone.images[selection.selectedImageIndex] || phone.images[0];
 
         const card = document.createElement('div');
-        card.className = "apple-trust-card rounded-2xl p-4 relative overflow-hidden";
+        card.className = "luxury-card rounded-3xl p-4 relative overflow-hidden";
         card.innerHTML = `
           <div class="flex items-center justify-between mb-3">
-            <span class="bg-emerald-500/10 text-emerald-400 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-emerald-500/20 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Stock Ready
+            <span class="bg-emerald-50 text-emerald-700 text-[10px] font-bold px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse"></span> Stock Ready
             </span>
-            <span class="bg-yellow-500/10 text-yellow-400 text-[10px] font-bold px-2 py-0.5 rounded border border-yellow-500/20">
+            <span class="bg-amber-50 text-amber-700 text-[10px] font-bold px-2.5 py-0.5 rounded-lg border border-amber-200">
               ₹499 BOOKING CHARGE
             </span>
           </div>
 
           <div class="flex items-start gap-4 mb-3">
-            <!-- Main Image (Clickable for Carousel Zoom) & Thumbnails -->
             <div class="flex flex-col items-center gap-1.5 flex-shrink-0">
-              <div onclick="openLightbox('${phone.id}', ${selection.selectedImageIndex})" class="w-24 h-28 bg-black/50 rounded-xl flex items-center justify-center p-2 border border-white/10 cursor-pointer group relative" title="Click to view photos">
+              <div onclick="openLightbox('${phone.id}', ${selection.selectedImageIndex})" class="w-24 h-28 bg-slate-50 rounded-2xl flex items-center justify-center p-2 border border-slate-200 cursor-pointer group relative shadow-sm" title="Click to view photos">
                 <img src="${activeImgSrc}" alt="${phone.name}" class="h-full object-contain group-hover:scale-105 transition duration-300" />
-                <span class="absolute bottom-1 right-1 bg-black/70 text-white text-[9px] px-1 rounded opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span>
+                <span class="absolute bottom-1 right-1 bg-slate-900/80 text-white text-[9px] px-1.5 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span>
               </div>
               
               <div class="flex gap-1">
                 ${phone.images.map((imgUrl, idx) => `
-                  <img src="${imgUrl}" onclick="switchPhoneImage('${phone.id}', ${idx})" class="w-6 h-6 rounded-md object-cover thumb-img ${selection.selectedImageIndex === idx ? 'active' : ''}" />
+                  <img src="${imgUrl}" onclick="switchPhoneImage('${phone.id}', ${idx})" class="w-6 h-6 rounded-lg object-cover thumb-img ${selection.selectedImageIndex === idx ? 'active' : ''}" />
                 `).join('')}
               </div>
             </div>
 
             <div class="flex-1 min-w-0">
-              <h3 class="text-base font-extrabold text-white leading-tight truncate mb-1">${phone.name}</h3>
-              <p class="text-[10px] text-slate-400 mb-2">Sealed Box + 1 Year Warranty</p>
+              <h3 class="text-base font-extrabold text-slate-900 leading-tight truncate mb-1">${phone.name}</h3>
+              <p class="text-[10px] text-slate-500 mb-2">Sealed Box + 1 Year Warranty</p>
               <div class="flex items-baseline gap-2">
-                <span class="text-2xl font-black text-blue-400">${formattedPrice}</span>
-                <span class="text-xs text-slate-500 line-through">${phone.originalPrice}</span>
+                <span class="text-2xl font-black text-indigo-600">${formattedPrice}</span>
+                <span class="text-xs text-slate-400 line-through">${phone.originalPrice}</span>
               </div>
             </div>
           </div>
 
-          <div class="bg-black/40 p-3 rounded-xl space-y-2.5 mb-3 border border-white/5">
+          <div class="bg-slate-50/80 p-3.5 rounded-2xl space-y-2.5 mb-3.5 border border-slate-200/80">
             <div>
-              <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+              <div class="flex justify-between text-[10px] text-slate-500 mb-1">
                 <span class="font-bold">STORAGE:</span>
-                <span class="text-blue-400 font-semibold">${selection.storageLabel}</span>
+                <span class="text-indigo-600 font-semibold">${selection.storageLabel}</span>
               </div>
               <div class="grid grid-cols-3 gap-1.5">
-                <button onclick="updateStorage('${phone.id}', 0, '128 GB')" class="py-1.5 text-[11px] font-bold rounded-lg border transition ${selection.storageAddOn === 0 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'}">
+                <button onclick="updateStorage('${phone.id}', 0, '128 GB')" class="py-1.5 text-[11px] font-bold rounded-xl border transition ${selection.storageAddOn === 0 ? 'bg-indigo-600 border-indigo-600 text-white shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100'}">
                   128GB
                 </button>
-                <button onclick="updateStorage('${phone.id}', 3000, '256 GB')" class="py-1.5 text-[11px] font-bold rounded-lg border transition ${selection.storageAddOn === 3000 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'}">
+                <button onclick="updateStorage('${phone.id}', 3000, '256 GB')" class="py-1.5 text-[11px] font-bold rounded-xl border transition ${selection.storageAddOn === 3000 ? 'bg-indigo-600 border-indigo-600 text-white shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100'}">
                   256GB <span class="text-[9px] opacity-80">+3k</span>
                 </button>
-                <button onclick="updateStorage('${phone.id}', 6000, '512 GB')" class="py-1.5 text-[11px] font-bold rounded-lg border transition ${selection.storageAddOn === 6000 ? 'bg-blue-600 border-blue-500 text-white' : 'bg-slate-800/80 border-slate-700 text-slate-300 hover:bg-slate-700'}">
+                <button onclick="updateStorage('${phone.id}', 6000, '512 GB')" class="py-1.5 text-[11px] font-bold rounded-xl border transition ${selection.storageAddOn === 6000 ? 'bg-indigo-600 border-indigo-600 text-white shadow-sm' : 'bg-white border-slate-200 text-slate-700 hover:bg-slate-100'}">
                   512GB <span class="text-[9px] opacity-80">+6k</span>
                 </button>
               </div>
             </div>
 
             <div>
-              <div class="flex justify-between text-[10px] text-slate-400 mb-1">
+              <div class="flex justify-between text-[10px] text-slate-500 mb-1">
                 <span class="font-bold">COLOUR:</span>
-                <span class="text-blue-400 font-semibold">${selection.color}</span>
+                <span class="text-indigo-600 font-semibold">${selection.color}</span>
               </div>
-              <select onchange="updateColor('${phone.id}', this.value)" class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-1.5 text-xs text-white focus:outline-none focus:border-blue-500">
+              <select onchange="updateColor('${phone.id}', this.value)" class="w-full bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-indigo-600 shadow-sm">
                 ${phone.colors.map(c => `<option value="${c}" ${selection.color === c ? 'selected' : ''}>${c}</option>`).join('')}
               </select>
             </div>
           </div>
 
-          <button onclick="openNextPageModal('${phone.id}', '${phone.name}', ${finalPriceNumber})" class="glow-telegram-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3 px-4 rounded-xl transition duration-200">
+          <button onclick="openNextPageModal('${phone.id}', '${phone.name}', ${finalPriceNumber})" class="premium-gradient-btn flex items-center justify-center gap-2 w-full text-white text-xs font-bold py-3.5 px-4 rounded-2xl transition duration-200">
             <i class="fa-brands fa-telegram text-base"></i> BOOK NOW ON TELEGRAM AT ₹499
           </button>
         `;
@@ -565,7 +547,6 @@
       });
     }
 
-    // Lightbox Carousel Functions
     function openLightbox(phoneId, imgIdx) {
       const phone = phones.find(p => p.id === phoneId);
       if (phone) {
@@ -644,7 +625,7 @@
         `🎨 Colour: ${activePhoneOrder.color}\n` +
         `💰 Deal Price: ${formattedPrice}\n` +
         `🟡 Booking Fee: ₹499\n` +
-        `💵 Cash on Delivery: ${codPrice}\n\n` +
+        `💵 CASH ON DELIVERY: ${codPrice}\n\n` +
         `📋 CUSTOMER DELIVERY DETAILS:\n` +
         `-------------------------------\n` +
         `👤 Name: ${name}\n` +
