@@ -92,9 +92,9 @@
     </div>
   </header>
 
-  <!-- ENTRY POPUP MODAL (80% DISCOUNT & ₹499 ADVANCE) -->
-  <div id="entryOfferModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
-    <div class="luxury-card bg-white rounded-3xl p-6 max-w-sm w-full border-slate-200 text-center relative overflow-hidden shadow-2xl animate-bounce-short">
+  <!-- ENTRY POPUP MODAL (HIDDEN BY DEFAULT, OPENS AFTER 1.5 SECONDS) -->
+  <div id="entryOfferModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+    <div class="luxury-card bg-white rounded-3xl p-6 max-w-sm w-full border-slate-200 text-center relative overflow-hidden shadow-2xl">
       
       <button onclick="closeEntryModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700 text-base">
         <i class="fa-solid fa-xmark"></i>
@@ -506,6 +506,13 @@
         };
       });
     }
+
+    // Trigger Popup after 1.5 seconds (1500ms)
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('entryOfferModal').classList.remove('hidden');
+      }, 1500);
+    });
 
     function closeEntryModal() {
       document.getElementById('entryOfferModal').classList.add('hidden');
