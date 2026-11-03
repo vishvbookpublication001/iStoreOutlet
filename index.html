@@ -92,7 +92,7 @@
     </div>
   </header>
 
-  <!-- ENTRY POPUP MODAL (HIDDEN BY DEFAULT, OPENS AFTER 1.5 SECONDS) -->
+  <!-- ENTRY POPUP MODAL (1.5 SEC DELAY) -->
   <div id="entryOfferModal" class="hidden fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
     <div class="luxury-card bg-white rounded-3xl p-6 max-w-sm w-full border-slate-200 text-center relative overflow-hidden shadow-2xl">
       
@@ -234,7 +234,7 @@
       </button>
 
       <div class="w-full h-80 sm:h-96 flex items-center justify-center bg-white rounded-3xl p-4 border border-slate-200 relative overflow-hidden mb-4 shadow-2xl">
-        <img id="lightboxImg" src="" alt="Zoomed Phone" class="max-h-full max-w-full object-contain transition-all duration-300" />
+        <img id="lightboxImg" src="" alt="Zoomed Phone" onerror="handleImageError(this)" class="max-h-full max-w-full object-contain transition-all duration-300" />
         
         <button onclick="prevLightboxImage()" class="absolute left-3 bg-white/90 hover:bg-white text-slate-900 w-10 h-10 rounded-full flex items-center justify-center border border-slate-200 shadow-md transition">
           <i class="fa-solid fa-chevron-left"></i>
@@ -331,6 +331,26 @@
   <script>
     const telegramUsername = "aditya_kumar_60";
 
+    // Multi-Format + Multi-Name Super Smart Fallback Engine
+    function handleImageError(imgElement) {
+      const src = imgElement.src;
+      
+      // Extension Fallbacks
+      if (src.endsWith('.webp')) {
+        imgElement.src = src.replace('.webp', '.jpg');
+      } else if (src.endsWith('.jpg')) {
+        imgElement.src = src.replace('.jpg', '.png');
+      } else if (src.endsWith('.png')) {
+        imgElement.src = src.replace('.png', '.jpeg');
+      } 
+      // Pro/Pro Max Naming Alternative Fallbacks
+      else if (src.includes('pro-')) {
+        imgElement.src = src.replace('pro-', 'promax-').replace('.jpeg', '.webp');
+      } else if (src.includes('promax-')) {
+        imgElement.src = src.replace('promax-', 'pro-').replace('.jpeg', '.webp');
+      }
+    }
+
     const phones = [
       { 
         id: '12', 
@@ -338,11 +358,7 @@
         basePrice: 12999, 
         originalPrice: '₹65,900', 
         colors: ['Black', 'White', 'Blue', 'Green', 'Purple'], 
-        images: [
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1603891128711-11b4b0320d56?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone12-1.webp', 'images/iphone12-2.webp', 'images/iphone12-3.webp'] 
       },
       { 
         id: '12pro', 
@@ -350,11 +366,7 @@
         basePrice: 14999, 
         originalPrice: '₹1,19,900', 
         colors: ['Pacific Blue', 'Gold', 'Graphite', 'Silver'], 
-        images: [
-          'https://images.unsplash.com/photo-1603891128711-11b4b0320d56?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone12pro-1.webp', 'images/iphone12pro-2.webp', 'images/iphone12pro-3.webp'] 
       },
       { 
         id: '13', 
@@ -362,11 +374,7 @@
         basePrice: 14999, 
         originalPrice: '₹69,900', 
         colors: ['Midnight', 'Starlight', 'Blue', 'Pink', 'Green'], 
-        images: [
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone13-1.webp', 'images/iphone13-2.webp', 'images/iphone13-3.webp'] 
       },
       { 
         id: '13pro', 
@@ -374,11 +382,7 @@
         basePrice: 18999, 
         originalPrice: '₹1,29,900', 
         colors: ['Sierra Blue', 'Graphite', 'Gold', 'Alpine Green'], 
-        images: [
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1603891128711-11b4b0320d56?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone13pro-1.webp', 'images/iphone13pro-2.webp', 'images/iphone13pro-3.webp'] 
       },
       { 
         id: '14', 
@@ -386,11 +390,7 @@
         basePrice: 16999, 
         originalPrice: '₹79,900', 
         colors: ['Blue', 'Purple', 'Midnight', 'Starlight', 'Yellow'], 
-        images: [
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone14-1.webp', 'images/iphone14-2.webp', 'images/iphone14-3.webp'] 
       },
       { 
         id: '14pro', 
@@ -398,11 +398,7 @@
         basePrice: 20999, 
         originalPrice: '₹1,39,900', 
         colors: ['Deep Purple', 'Space Black', 'Gold', 'Silver'], 
-        images: [
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone14pro-1.webp', 'images/iphone14pro-2.webp', 'images/iphone14pro-3.webp'] 
       },
       { 
         id: '15', 
@@ -410,11 +406,7 @@
         basePrice: 19999, 
         originalPrice: '₹79,900', 
         colors: ['Pink', 'Yellow', 'Green', 'Blue', 'Black'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone15-1.webp', 'images/iphone15-2.webp', 'images/iphone15-3.webp'] 
       },
       { 
         id: '15pro', 
@@ -422,11 +414,7 @@
         basePrice: 24999, 
         originalPrice: '₹1,59,900', 
         colors: ['Natural Titanium', 'Blue Titanium', 'White Titanium', 'Black Titanium'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone15pro-1.webp', 'images/iphone15pro-2.webp', 'images/iphone15pro-3.webp'] 
       },
       { 
         id: '16', 
@@ -434,11 +422,7 @@
         basePrice: 22999, 
         originalPrice: '₹79,900', 
         colors: ['Ultramarine', 'Teal', 'Pink', 'White', 'Black'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone16-1.webp', 'images/iphone16-2.webp', 'images/iphone16-3.webp'] 
       },
       { 
         id: '16pro', 
@@ -446,11 +430,7 @@
         basePrice: 27999, 
         originalPrice: '₹1,79,900', 
         colors: ['Desert Titanium', 'Natural Titanium', 'White Titanium', 'Black Titanium'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone16pro-1.webp', 'images/iphone16pro-2.webp', 'images/iphone16pro-3.webp'] 
       },
       { 
         id: '17', 
@@ -458,11 +438,7 @@
         basePrice: 26999, 
         originalPrice: '₹89,900', 
         colors: ['Ultramarine', 'Teal', 'Pink', 'White', 'Black'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone17-1.webp', 'images/iphone17-2.webp', 'images/iphone17-3.webp'] 
       },
       { 
         id: '17pro', 
@@ -470,11 +446,7 @@
         basePrice: 32999, 
         originalPrice: '₹1,49,900', 
         colors: ['Natural Titanium', 'Desert Titanium', 'White Titanium', 'Black Titanium'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1632661674596-df8be070a5c5?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone17pro-1.webp', 'images/iphone17pro-2.webp', 'images/iphone17pro-3.webp'] 
       },
       { 
         id: '17promax', 
@@ -482,11 +454,7 @@
         basePrice: 34999, 
         originalPrice: '₹1,89,900', 
         colors: ['Desert Titanium', 'Natural Titanium', 'White Titanium', 'Black Titanium'], 
-        images: [
-          'https://images.unsplash.com/photo-1695048133142-1a20484d2569?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1663499482523-1c0c1bae4ce1?auto=format&fit=crop&w=600&q=80',
-          'https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=600&q=80'
-        ] 
+        images: ['images/iphone17promax-1.webp', 'images/iphone17promax-2.webp', 'images/iphone17promax-3.webp'] 
       }
     ];
 
@@ -507,7 +475,6 @@
       });
     }
 
-    // Trigger Popup after 1.5 seconds (1500ms)
     window.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => {
         document.getElementById('entryOfferModal').classList.remove('hidden');
@@ -543,13 +510,13 @@
           <div class="flex items-start gap-4 mb-3">
             <div class="flex flex-col items-center gap-1.5 flex-shrink-0">
               <div onclick="openLightbox('${phone.id}', ${selection.selectedImageIndex})" class="w-24 h-28 bg-slate-50 rounded-2xl flex items-center justify-center p-2 border border-slate-200 cursor-pointer group relative shadow-sm" title="Click to view photos">
-                <img src="${activeImgSrc}" alt="${phone.name}" class="h-full object-contain group-hover:scale-105 transition duration-300" />
+                <img src="${activeImgSrc}" alt="${phone.name}" onerror="handleImageError(this)" class="h-full object-contain group-hover:scale-105 transition duration-300" />
                 <span class="absolute bottom-1 right-1 bg-slate-900/80 text-white text-[9px] px-1.5 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span>
               </div>
               
               <div class="flex gap-1">
                 ${phone.images.map((imgUrl, idx) => `
-                  <img src="${imgUrl}" onclick="switchPhoneImage('${phone.id}', ${idx})" class="w-6 h-6 rounded-lg object-cover thumb-img ${selection.selectedImageIndex === idx ? 'active' : ''}" />
+                  <img src="${imgUrl}" onerror="handleImageError(this)" onclick="switchPhoneImage('${phone.id}', ${idx})" class="w-6 h-6 rounded-lg object-cover thumb-img ${selection.selectedImageIndex === idx ? 'active' : ''}" />
                 `).join('')}
               </div>
             </div>
