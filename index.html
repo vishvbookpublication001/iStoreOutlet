@@ -331,6 +331,20 @@
   <script>
     const telegramUsername = "aditya_kumar_60";
 
+    // Foolproof Image Error Handler to prevent broken/missing photo issues automatically
+    function handleImgError(img) {
+      if (img.dataset.fallbackState) return;
+      img.dataset.fallbackState = "1";
+      const src = img.src;
+      if (src.endsWith('.webp')) {
+        img.src = src.replace('.webp', '.jpg');
+      } else if (src.endsWith('.jpg')) {
+        img.src = src.replace('.jpg', '.png');
+      } else {
+        img.src = 'https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?auto=format&fit=crop&w=400&q=80';
+      }
+    }
+
     const phones = [
       { 
         id: 'model_iphone12', 
@@ -504,13 +518,13 @@
           <div class="flex items-start gap-4 mb-3">
             <div class="flex flex-col items-center gap-1.5 flex-shrink-0">
               <div onclick="openLightbox('${phone.id}', ${selection.selectedImageIndex})" class="w-28 h-36 bg-slate-50 rounded-2xl flex items-center justify-center p-2.5 border border-slate-200 cursor-pointer group relative shadow-sm" title="Click to view photos">
-                <img id="main_img_${phone.id}" src="${activeImgSrc}" alt="${phone.name}" class="h-full object-contain group-hover:scale-105 transition duration-300 drop-shadow-sm" />
+                <img id="main_img_${phone.id}" src="${activeImgSrc}" alt="${phone.name}" onerror="handleImgError(this)" class="h-full object-contain group-hover:scale-105 transition duration-300 drop-shadow-sm" />
                 <span class="absolute bottom-1 right-1 bg-slate-900/80 text-white text-[9px] px-1.5 py-0.5 rounded-md opacity-0 group-hover:opacity-100 transition"><i class="fa-solid fa-expand"></i></span>
               </div>
               
               <div class="flex gap-1" id="thumbs_${phone.id}">
                 ${phone.images.map((imgUrl, idx) => `
-                  <img src="${imgUrl}" id="thumb_${phone.id}_${idx}" onclick="switchPhoneImage('${phone.id}', ${idx})" class="w-7 h-7 rounded-lg object-cover thumb-img ${selection.selectedImageIndex === idx ? 'active' : ''}" />
+                  <img src="${imgUrl}" id="thumb_${phone.id}_${idx}" onerror="handleImgError(this)" onclick="switchPhoneImage('${phone.id}', ${idx})" class="w-7 h-7 rounded-lg object-cover thumb-img ${selection.selectedImageIndex === idx ? 'active' : ''}" />
                 `).join('')}
               </div>
             </div>
